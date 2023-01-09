@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     Webflow.push(function() {
         $("#pwnd-form").submit(function() {
-            const input = form.querySelector("#pwnd-mail");
+            const input = form.querySelector("#pwnd-email");
             const msg = form.querySelector("#pwnd-msg");
 
             console.log(input)
