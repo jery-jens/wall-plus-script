@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             console.log(input)
     
-            fetch("api-url", {
+            fetch("https://wall-plus-api.vercel.app/api/get-pwnd", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
