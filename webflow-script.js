@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
         $("#pwnd-form").submit(function() {
             const input = form.querySelector("#pwnd-mail");
             const msg = form.querySelector("#pwnd-msg");
+
+            console.log(input)
     
             fetch("api-url", {
                 method: "POST",
