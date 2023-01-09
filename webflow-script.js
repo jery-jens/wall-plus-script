@@ -7,6 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         fetch("api-url", {
             method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
             body: JSON.stringify({ email: input.value }),
         })
             .then((res) => res.json())
