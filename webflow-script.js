@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
         $("#pwnd-form").submit(function() {
             const input = document.querySelector("#pwnd-email");
             const msg = document.querySelector("#pwnd-msg");
+
+            msg.style.display = "flex";
+            msg.innerHTML = "Loading...";
     
             fetch("https://wall-plus-api.vercel.app/api/get-pwnd", {
                 method: "POST",
@@ -16,12 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 .then((res) => res.json())
                 .then((data) => {
                     const info = data.message;
-                    msg.style.display = "flex";
-                    msg.innerHTML  = info;
+                    msg.innerHTML = info;
                 })
                 .catch((e) => {
-                    msg.style.display = "flex";
-                    msg.innerHTML  = "Something went wrong. Try again later.";
+                    msg.innerHTML = "Something went wrong. Try again later.";
                 });
         });
     });
