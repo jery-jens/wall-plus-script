@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     Webflow.push(function() {
         $("#pwnd-form").submit(function() {
-            const input = form.querySelector("#pwnd-email");
-            const msg = form.querySelector("#pwnd-msg");
+            const input = document.querySelector("#pwnd-email");
+            const msg = document.querySelector("#pwnd-msg");
     
             fetch("https://wall-plus-api.vercel.app/api/get-pwnd", {
                 method: "POST",
