@@ -4,10 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
     Webflow.push(function() {
         $("#pwnd-form").submit(function() {
             const input = document.querySelector("#pwnd-email");
-            const msg = document.querySelector("#pwnd-msg");
+            const msgTrue = document.querySelector(".true");
+            const msgFalse = document.querySelector(".true");
 
             msg.style.display = "flex";
-            msg.innerHTML = "Loading...";
     
             fetch("https://wall-plus-api.vercel.app/api/get-pwnd", {
                 method: "POST",
@@ -19,10 +19,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 .then((res) => res.json())
                 .then((data) => {
                     const info = data.message;
-                    msg.innerHTML = info;
-                })
-                .catch((e) => {
-                    msg.innerHTML = "Something went wrong. Try again later.";
+
+                    if (info === "You have been pawned!") {
+                        msgTrue.style.display = "block";
+                        msgFalse.style.display = "none";
+                    } else {
+                        msgTrue.style.display = "none";
+                        msgFalse.style.display = "block";
+                    };
                 });
         });
     });
