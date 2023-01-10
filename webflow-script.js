@@ -6,8 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const input = document.querySelector("#pwnd-email");
 
             const msgTrue = document.querySelector(".true");
-            const msgFalse = document.querySelector(".true");
-            const msgLoading = document.querySelector(".loading");
+            const msgFalse = document.querySelector(".false");
+            const msgLoading = document.querySelector(".pwnd-loading");
 
             // Show loading msg
             msgLoading.style.display = "block";
